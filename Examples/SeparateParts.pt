@@ -1,0 +1,1 @@
+[['Start', 'Stop', 'MasterCoil', 'DetectBigParts', 'GateSolenoidCoil', 'TimerGateDN', 'TimerGate'], ['False', 'False', 'X', 'False', 'X', 'X', 'X'], ['True', 'False', 'True', 'X', 'X', 'X', 'X'], ['X', 'X', 'True', 'True', 'True', 'False', 'X'], ['X', 'X', 'True', 'X', 'True', 'X', 'X'], ['X', 'X', 'X', 'X', 'X', 'True', 'True']]

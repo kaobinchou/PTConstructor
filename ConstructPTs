@@ -1,0 +1,15 @@
+#!/bin/bash
+
+FILES="Examples/*.st"
+for f in $FILES
+do
+  extension="${f##*.}"
+  filename="${f%.*}"
+  #echo $filename
+  #echo $extension
+  echo " "
+  echo "Generating $filename.pt"
+  rm $filename.pt
+  time python3 "src/MainConstructor.py" $f
+  echo "Done $filename.pt"
+done
