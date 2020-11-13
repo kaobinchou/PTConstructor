@@ -1,11 +1,12 @@
-import sys
+import sys, json
 import fileinput
 #from optparse import OptionParser
 import argparse
 from pyPEG import parse
 from iec_grammar import *
-from buildPT import *
+from InitPT import InitPT,prog_name,var_list,cycle_time
 import re
+import buildPT
 #from test import test
 #import test
 r = re.compile
@@ -43,12 +44,18 @@ try:
     #print(t.print_())
     #test.print_()
     #print(ast)
-    print_ast(ast, 0)
-    #varl, l = buildPT(ast, [], [])
+    #print(json.dumps(ast, indent=2))
+    #print_ast(ast, 0)
+    execute_string,cycle_time = InitPT(ast)
+    print(var_list)
+    print(execute_string)
+    print(cycle_time)
+    result = buildPT.buildPT(var_list, execute_string, cycle_time)
     #result = [varl]
     #result.extend(l)
-    #for i in result:
-    #    args.outputFile.write(','.join(map(str, i))+'\n')
+    print(result)
+    for i in result:
+        args.outputFile.write(','.join(map(str, i))+'\n')
 
 except KeyboardInterrupt:
     sys.stderr.write("\n")
